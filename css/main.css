@@ -1,0 +1,624 @@
+.container{
+    position: relative;
+    padding: 0;
+}
+body{
+    overflow-x: hidden;
+    font-family: 'Ubuntu', sans-serif;
+}
+*{
+    box-sizing: border-box;
+}
+header{
+    display: flex;
+    height: 92px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: white;
+}
+.navigation{
+    padding:15px 0 15px 0;
+    display: inline-block;
+    margin-left: 60px;
+}
+a.logo{
+    padding:13px 0 13px 0;
+    cursor: pointer;
+}
+a.nav-btn + a.nav-btn{
+    margin-left: 40px;
+}
+a.nav-btn{
+    color: var(--gray-800, #424551);
+    text-decoration: none;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+}
+a.nav-btn:hover{
+    opacity: 0.9;
+}
+.header-icons{
+    margin-left: 172px;
+    margin-top: 6px;
+}
+.header-icon p{
+    padding: 0;
+    margin: 0;
+    color: var(--gray-800, #424551);
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.1;
+    font-size: 14px;
+}
+.header-icon span{
+    padding: 0;
+    margin: 0;
+    color: var(--gray-900, #1E212C);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.42;
+    font-family: Ubuntu;
+}
+.header-icon {
+display: flex;
+align-items: center;
+}
+.header-icon-text{
+    display: inline-block;
+    margin-left: 12px;
+}
+.header-icons{
+    display: flex;
+}
+.header-icon + .header-icon{
+    margin-left: 36px;
+}
+
+
+.slider {
+    left: 0;
+    width: 100%;
+    transition:all 0.5s ease-in;
+    height: 988px;
+    display: flex;
+    position: relative;
+}
+
+.slide {
+    height: 988px;
+    transition: all ease 1s;
+}
+
+.slide-one {
+    width: 100%;
+    height: 988px;
+    background-image: url(../img/bg-image.jpg);
+ }
+
+
+.main-btn {
+    border-radius: 4px;
+    cursor: pointer;
+    padding:0 40px;
+    text-align: center;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 52px; /* 325% */
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--white, #FFF);
+ }
+ 
+ .main-btn:hover, .main-btn:focus, .main-btn:active{
+    opacity: 0.9;
+    outline: none;
+ }
+ .main-btn + .main-btn{
+    margin-left: 24px;
+ }
+
+.learn-btn {
+    background-color: transparent;
+    border: 1px solid white;
+}
+.learn-btn:hover{
+    color:rgb(211, 211, 211);
+    border: 1px solid rgb(211, 211, 211);
+}
+
+.sumbit-btn {
+    background-color: #FF5A30;
+    border: none;
+}
+.sumbit-btn:hover{
+    border: none;
+    background: #d4401a;
+}
+
+.slide-two {
+    width: 100%;
+    background-image: url(../img/174248-vodopad-josemiti-priroda-leica_v_lux_tip_114-dostoprimechatelnost-1920x1080.jpg);
+    background-repeat: no-repeat;
+    background-size:100%;
+}
+
+.prev-btn {
+    left: 32px;
+ }
+
+.next-btn {
+    right: 32px;
+    left: auto;
+}
+
+.next-btn, .prev-btn {
+    transition: transform 0.2s ease-in;
+    border: none;
+    opacity: 0.5;
+    background-color: white;
+    position: absolute;
+    z-index: 99;
+    height: 48px;
+    border-radius: 50%;
+    width: 48px;
+}
+
+.next-btn:hover, .prev-btn:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.next-btn:hover{
+    transform: translateX(5px);
+}
+
+.prev-btn:hover{
+    transform: translateX(-5px);
+}
+
+.next-btn:focus, .prev-btn:focus{
+    border: none;
+    background-color: white;
+    position: absolute;
+    z-index: 99;
+    height: 48px;
+    border-radius: 50%;
+    width: 48px;
+    outline: none;
+}
+
+.slide-content{
+    padding-top: 220px;
+    padding-bottom: 353px;
+}
+.slide-content h1{
+    padding-bottom: 18px;
+    color: var(--white, #FFF);
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 72px;
+    line-height: 130%;
+}
+
+.slide-content span{
+    display: inline-block;
+    font-family: Ubuntu;
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%;
+    letter-spacing: 1px;
+    color:#FF5A30;
+}
+.slide-content p{
+    font-family: Ubuntu;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: regular;
+    line-height: 150%;
+    color: var(--white, #FFF);
+}
+
+.slide-content p + .main-btn{
+    margin-top: 43px;
+}
+.sliders-container{
+    width: 400%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+.slide-three{
+    width: 100%;
+    background-image: url(../img/174246-nyu_jorkskij_zakat-vsemirnyj_torgovyj_centr_1-zakat-gorod-empajr_stejt_bilding-1920x1080.jpg);
+    background-repeat: no-repeat;
+    background-size:100%;
+}
+.slider-count{
+    position: absolute;
+    bottom: 40px;
+    top:auto;
+    left: 315px;
+}
+.radio-main{
+    width: 178px;
+    cursor: pointer;
+    color: var(--white, #FFF);
+    font-family: Ubuntu;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    border:none;
+    background-color: transparent;
+    text-align-last: left;
+}
+.slider-count-btn{
+    display: block;
+    padding-bottom: 10px;
+    border-bottom: 2px solid white;
+    outline: none;
+    opacity: 0.5;
+    padding-left: 0;
+}
+
+.radio-real{
+    display: none;
+}
+
+.radio-real:checked + .slider-count-btn{
+    opacity: 1;
+}
+
+.slide-four{
+    width: 100%;
+    background-image: url(../img/174167-rozhdestvenskie_ogni-rozhdestvo-elka-osveshhenie-rozhdestvenskie_girlyandy-1920x1080.jpg);
+    background-repeat: no-repeat;
+    background-size:100%;
+}
+
+main{
+    margin-bottom: 120px;
+}
+
+.video{
+    margin-bottom: 180px;
+
+}
+.sections-h{
+    text-align: center;
+    font-family: Ubuntu;
+    font-size: 46px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%;
+    color: var(--gray-900, #1E212C);
+}
+.sections-p{
+    margin-bottom: 60px;
+    text-align: center;
+    font-family: Ubuntu;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    color: var(--gray-700, #787A80);
+}
+.sections-h + .sections-p{
+    margin-top: 24px;
+}
+.video-content{
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    display: flex;
+    height: 500px;
+    width: 1230px;
+    position: relative;
+}
+
+.video-content video{
+    transition: all 0.2s ease-in;
+    filter: brightness(50%);
+}
+
+.play, .mute {
+    cursor: pointer;
+    border:none;
+    position: absolute;
+}
+.play:focus, .mute:focus{
+    outline: none;
+}
+.play{
+    transition: all 0.2s ease-in;
+    border-radius: 50%;
+    background-color: #FF5A30;
+    height: 80px;
+    width: 80px;
+    top:50%;
+    transform: translateY(-50%);
+}
+.play:hover{
+    background-color: #ee613e;
+    transform: translateY(-55%);
+}
+.mute{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    bottom: 32px;
+    left: 32px;
+    right: auto;
+    top:auto;
+}
+
+.mute-btn{
+    transition: all 0.2s ease-in;
+    background-repeat: no-repeat;
+    position: absolute;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 50%;
+    background-image: url(../img/idle.svg);
+    width: 100%;
+    height: 100%;
+}
+.mute-btn:active, .mute-btn:focus{
+    outline: none;
+    border: none;
+}
+.mute-bg{
+    opacity: 0.4;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: gray;
+    position: absolute;
+}
+
+.video-bg{
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.cards{
+    margin-bottom: 120px;
+    display: flex;
+    align-items: center;
+}
+.card{
+    margin-right: 0;
+    border:none;
+    
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: inherit;
+    display: inline-block;
+    width: 378px;
+    height: 188px;  
+}
+
+.card-border{
+    margin-right: 92px;
+    margin-left: 92px;
+    position: relative;
+    display: inline-block;
+    height: 170px;
+    width: 1px;
+    background: linear-gradient(315deg, rgba(218, 219, 221, 0.00) 0%, rgba(218, 219, 221, 0.50) 12.33%, #DADBDD 51.91%, rgba(218, 219, 221, 0.50) 87.85%, rgba(218, 219, 221, 0.00) 100%);
+}
+
+.card img{
+    width: 48px;
+    height: 48px;
+    margin-bottom: 24px;
+}
+.card h2{
+    margin-bottom: 8px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; 
+    color: var(--gray-900, #1E212C);
+}
+
+.card p{
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    color: var(--gray-700, #787A80);
+}
+.cards-form{
+    box-shadow: 0px 4px 4px -4px rgba(30, 33, 44, 0.03), 0px 12px 10px -6px rgba(154, 156, 165, 0.04), 0px 30px 24px -10px rgba(154, 156, 165, 0.05), 0px 80px 80px -20px rgba(154, 156, 165, 0.08);
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+    height: 243px;
+    background: white;
+    padding: 48px 60px;
+}
+.cards-form h1{
+    margin-bottom: 32px;
+    text-align: center;
+}
+.ask-form{
+    margin-right: 24px;
+    width: 260px;
+    height: 73px;
+    display: inline-block;
+}
+
+.ask-form input, .ask-form-massage input{
+    width: 100%;
+    height: 44px;
+    border: 1px solid var(--gray-400, #D7DADD);
+    border-radius: 4px;
+    background: var(--gray-200, #F4F5F6);
+    padding-left: 16px;
+}
+.ask-form-massage{
+    width: 414px;
+    height: 73px;
+    display: inline-block;
+}
+.cards-form button{
+    cursor: pointer;
+    height: 44px;
+    width: 104px;
+    background: #FF5A30;
+    text-align: center;
+    font-family: inherit;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 44px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--white, #FFF);
+    border-radius: 4px;
+    border: none;
+    margin-left: 24px;
+}
+.cards-form button:hover, .cards-form button:active, .cards-form button:focus{
+    border:none;
+    outline: none;
+    background: #d4401a;
+    opacity: 0.9;
+}
+.services{
+    padding-top: 212px;
+    margin-top: 281px;
+    background: url(../img/bg-image.png), lightgray 50% / cover no-repeat;
+    background-size: 100% 100%;
+    padding-bottom: 85px;
+}
+
+.service-cards {
+    display: flex;
+    padding-bottom: 85px;
+ }
+
+.service-card{
+    transition: all 0.2s ease-in;
+    cursor: pointer;
+    border-radius: 4px;
+    position: relative;
+    background: white;
+    height: 285px;
+    width: 285px;
+    text-align: center;
+ }
+ .service-card:hover{
+     -moz-box-shadow: 0px 4px 8px 4px rgba(34, 60, 80, 0.2);
+     box-shadow: 0px 4px 8px 4px rgba(34, 60, 80, 0.2);
+     -webkit-box-shadow: 0px 4px 8px 4px rgba(34, 60, 80, 0.2);
+    transform: translateY(-5px);
+ }
+ .service-card-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+ }
+ .service-card h3{
+    white-space: nowrap;
+     font-family: inherit;
+     font-size: 20px;
+     font-style: normal;
+     font-weight: 700;
+     line-height: 150%;
+     color: var(--gray-900, #1E212C);
+ }
+ .service-card img{
+    margin-bottom: 24px;
+ }
+ .service-card + .service-card{
+    margin-left: 30px;
+ }
+ .service-card-v2{
+    position: relative;
+    background-size: cover;
+    box-shadow: 0px 4px 4px -4px rgba(30, 33, 44, 0.05), 0px 12px 10px -6px rgba(30, 33, 44, 0.08), 0px 26px 24px -10px rgba(30, 33, 44, 0.10), 0px 60px 80px -20px rgba(30, 33, 44, 0.16);
+    background-image: url(../img/bg-serv.jpg);
+ }
+.service-card-v2:before {
+    transition: all 0.2s ease-in;
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color:rgba(0, 0, 0, .5);
+}
+.service-card-v2:hover:before{
+    background-color:rgba(0, 0, 0, 0);
+}
+ .service-card-v2 h3{
+    color: var(--white, #FFF);
+ }
+ .services h2{
+    margin-right: 40px;
+    display: inline-block;
+    color: var(--gray-900, #1E212C);
+    font-family: inherit;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+ }
+ .services button{
+    transition: all 0.2s ease-in;
+    transition: transform 0s;
+    cursor: pointer;
+    outline: none;
+    border:none;
+    border-radius: 4px;
+    background-color: #FF5A30;
+    padding: 0 40px;
+    text-align: center;
+    font-family: inherit;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 52px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--white, #FFF);
+ }
+ .services button:hover, .services button:focus .services button:active{
+    outline: none;
+    border: none;
+    background: #d4401a;
+    opacity: 0.9;
+ }
+ .services button:active{
+    transform: scale(0.99);
+ }
+ .service-holder{
+    align-items: self-end;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+ }
