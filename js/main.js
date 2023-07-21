@@ -141,3 +141,47 @@ muteVideo.addEventListener('click', function(){
   }
 });
 
+
+let browseOffset = 0;
+const browseSlide1 = document.querySelector('.browse-one');
+const browseSlide2 = document.querySelector('.browse-two');
+const browsePrev = document.querySelector('.browse-prev');
+const browseNext = document.querySelector('.browse-next');
+const browseLine = document.querySelector('.browse-slider');
+
+browseNext.addEventListener('click', function(){
+  browseOffset = browseOffset + 100;
+  if (browseOffset > 100) {
+    browseOffset = 100;
+  }
+  browseLine.style.left = -browseOffset + '%';
+  if(browseOffset == 0){
+    browseNext.classList.add("browse-active");
+    browsePrev.classList.remove("browse-active");
+    browsePrev.style.rotate = "0deg";
+}
+  if(browseOffset > 0){
+    browseNext.classList.remove("browse-active");
+    browsePrev.classList.add("browse-active");
+    browsePrev.style.rotate = "180deg";
+  }
+});
+
+browsePrev.addEventListener('click', function () {
+  browseOffset = browseOffset - 100;
+  if (browseOffset < 0) {
+    browseOffset = 0;
+  }
+  browseLine.style.left = -browseOffset + '%';
+  if(browseOffset == 0){
+    browseNext.classList.add("browse-active");
+    browsePrev.classList.remove("browse-active");
+    browsePrev.style.rotate = "0deg";
+}
+  if(browseOffset > 0){
+    browseNext.classList.remove("browse-active");
+    browsePrev.classList.add("browse-active");
+    browsePrev.style.rotate = "180deg";
+  }
+});
+
