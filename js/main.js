@@ -1,4 +1,6 @@
 let offset = 0;
+let timer;
+autoSlider();
 const sliderLine = document.querySelector('.slider');
 const countBtn1 = document.querySelector('.one-real');
 const countBtn2 = document.querySelector('.two-real');
@@ -6,14 +8,6 @@ const countBtn3 = document.querySelector('.tree-real');
 const countBtn4 = document.querySelector('.four-real');
 const prevBtn = document.querySelector('.prev-btn');
 const nextBtn = document.querySelector('.next-btn');
-
-// countBtn1.addEventListener('change', function() {
-//   if(offset == 0){
-//     countBtn1.checked = true;
-//   } else {
-//     countBtn1.checked = false;
-//   }
-// })
 
 countBtn1.addEventListener('change', function(){
       offset = 0;
@@ -35,38 +29,67 @@ countBtn4.addEventListener('change', function(){
 sliderLine.style.left = -offset + '%';
 });
 
-nextBtn.addEventListener('click', function(){
-    offset = offset + 25;
-    if (offset > 75) {
-        offset = 0;
-        countBtn1.checked = true;
-    }
-    sliderLine.style.left = -offset + '%';
+function sliderNext () {
+  offset = offset + 25;
+  if (offset > 75) {
+      offset = 0;
+      countBtn1.checked = true;
+  }
+  if(offset == 75){
+    countBtn4.checked = true;
+  }
+  if(offset == 50){
+    countBtn3.checked = true;
+  }
+  if(offset == 25){
+    countBtn2.checked = true;
+  }
+  if(offset == 0){
+    countBtn1.checked = true;
+  }
+  sliderLine.style.left = -offset + '%';
+  autoSlider();
+}
+
+  nextBtn.addEventListener('click', function (){
+  clearTimeout(timer);
+  offset = offset + 25;
+  if (offset > 75) {
+      offset = 0;
+      countBtn1.checked = true;
+  }
+  if(offset == 75){
+    countBtn4.checked = true;
+  }
+  if(offset == 50){
+    countBtn3.checked = true;
+  }
+  if(offset == 25){
+    countBtn2.checked = true;
+  }
+  if(offset == 0){
+    countBtn1.checked = true;
+  }
+  sliderLine.style.left = -offset + '%';
+  autoSlider();
   });
 
+
+  function autoSlider (){
+    timer = setTimeout(sliderNext, 6000);
+  }
+
   prevBtn.addEventListener('click', function () {
+    clearTimeout(timer);
     offset = offset - 25;
     if (offset < 0) {
         offset = 75;
         countBtn3.checked = true;
     }
     sliderLine.style.left = -offset + '%';
+    autoSlider();
   });
 
-  nextBtn.addEventListener('click', function() {
-    if(offset == 75){
-      countBtn4.checked = true;
-    }
-    if(offset == 50){
-      countBtn3.checked = true;
-    }
-    if(offset == 25){
-      countBtn2.checked = true;
-    }
-    if(offset == 0){
-      countBtn1.checked = true;
-    }
-  });
 
   prevBtn.addEventListener('click', function() {
     if(offset == 75){
@@ -81,6 +104,7 @@ nextBtn.addEventListener('click', function(){
     if(offset == 0){
       countBtn1.checked = true;
     }
+
   });
 
 const playVideo = document.querySelector('.play');
@@ -143,8 +167,6 @@ muteVideo.addEventListener('click', function(){
 
 
 let browseOffset = 0;
-const browseSlide1 = document.querySelector('.browse-one');
-const browseSlide2 = document.querySelector('.browse-two');
 const browsePrev = document.querySelector('.browse-prev');
 const browseNext = document.querySelector('.browse-next');
 const browseLine = document.querySelector('.browse-slider');
@@ -185,3 +207,64 @@ browsePrev.addEventListener('click', function () {
   }
 });
 
+
+let supOffset = 0;
+let supTimer;
+supAutoSlider();
+const supPrev = document.querySelector('.comment-prev');
+const supNext = document.querySelector('.comment-next');
+const comSlider = document.querySelector('.comment-slider');
+
+supPrev.addEventListener('click', function(){
+  clearTimeout(supTimer);
+  supOffset = supOffset - 100;
+  if(supOffset < 0){
+    supOffset = 300;
+  }
+  comSlider.style.left = -supOffset + '%';
+  supAutoSlider();
+})
+
+function supportNext (){
+  supOffset = supOffset + 100;
+  if(supOffset > 300){
+    supOffset = 0;
+  }
+  comSlider.style.left = -supOffset + '%';
+  supAutoSlider();
+}
+function supAutoSlider (){
+  supTimer = setTimeout(supportNext, 6000);
+}
+supNext.addEventListener('click', function() {
+  clearTimeout(supTimer);
+  supOffset = supOffset + 100;
+  if(supOffset > 300){
+    supOffset = 0;
+  }
+  comSlider.style.left = -supOffset + '%';
+  supAutoSlider();
+});
+
+const detailsBtn = document.querySelector('.details-form-btn');
+const checkBtn = document.querySelector('.real-btn');
+const text = document.querySelector('.agree');
+
+detailsBtn.addEventListener('click', function() {
+  if(checkBtn.checked == false){
+    text.style.display = "inline-block";
+    event.preventDefault();
+  } else {
+    text.style.display = "none";
+    location.reload();
+  }
+})
+
+const button = document.querySelector('.scrollup');
+
+button.addEventListener('click', function() {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+  });
+});
