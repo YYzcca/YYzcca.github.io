@@ -268,3 +268,7 @@ button.addEventListener('click', function() {
     left: 0,
   });
 });
+
+function xFun(x) {
+  x.classList.toggle("change");
+}
