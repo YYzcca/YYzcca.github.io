@@ -1,6 +1,11 @@
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
+body, html{
+    max-width: 100%;
+    overflow-x: hidden;
+}
 .container{
     position: relative;
     padding: 0;
@@ -19,17 +24,41 @@ header{
     padding-bottom: 20px;
     background: white;
 }
+@media (max-width: 576px) {
+    header{
+        height: auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        align-items: center;
+    }
+}
 .navigation{
     padding:15px 0 15px 0;
     display: inline-block;
     margin-left: 60px;
 }
+@media (max-width: 576px) {
+    .navigation{
+        display: none;
+    }
+}
 a.logo{
     padding:13px 0 13px 0;
     cursor: pointer;
 }
+@media (max-width: 576px) {
+    a.logo{
+        margin-left: 20px;
+    }
+}
 a.nav-btn + a.nav-btn{
     margin-left: 40px;
+}
+@media (max-width: 576px) {
+    a.nav-btn + a.nav-btn{
+        margin-top: 15px;
+        margin-left: 0;
+    }
 }
 a.nav-btn{
     color: #424551;
@@ -45,29 +74,42 @@ a.nav-btn:hover{
     margin-left: 172px;
     margin-top: 6px;
 }
+@media (max-width: 576px) {
+    .header-icons{
+        margin-left: 40px;
+        margin-top: 0;
+    }
+}
 .header-icon p{
     padding: 0;
     margin: 0;
     color:#424551;
-    font-family: Ubuntu;
+    font-family: inherit;
     font-style: normal;
     font-weight: 700;
     line-height: 1.1;
-    font-size: 14px;
+    font-size: 10px;
 }
+
 .header-icon span{
     padding: 0;
     margin: 0;
     color: #1E212C;
-    font-size: 18px;
+    font-size: 12px;
     font-style: normal;
     font-weight: 400;
     line-height: 1.42;
-    font-family: Ubuntu;
+    font-family: inherit;
 }
 .header-icon {
 display: flex;
 align-items: center;
+}
+@media (max-width: 576px) {
+    .header-icon img{
+        height: 30px;
+        width: 30px;
+    }
 }
 .header-icon-text{
     display: inline-block;
@@ -76,11 +118,34 @@ align-items: center;
 .header-icons{
     display: flex;
 }
+@media (max-width: 576px) {
+    .header-icons{
+        display: inline-block;
+    }
+}
 .header-icon + .header-icon{
     margin-left: 36px;
 }
+@media (max-width: 576px) {
+    .header-icon + .header-icon{
+        margin-left: 0;
+        margin-top: 6px;
+    }
+}
+.mobile-navigation{
+    width: 30%;
+    position: fixed;
+    background: white;
+    right: 0;
+    left: auto;
+    padding: 30px;
 
-
+}
+@media (max-width: 576px) {
+    .mobile-navigation{
+        transform: translateX(0%);
+    }
+}
 .slider {
     left: 0;
     width: 100%;
@@ -90,17 +155,31 @@ align-items: center;
     position: relative;
 }
 
+@media (max-width: 576px) {
+    .slider{
+        height: 100%;
+    }
+}
+
 .slide {
-    height: 988px;
     transition: all ease 1s;
 }
 
 .slide-one {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size:100% 100%;
     width: 100%;
-    height: 988px;
     background-image: url(../img/bg-image.jpg);
  }
 
+ @media (max-width: 576px) {
+    .slide-one{
+        background-size: 100% 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+    }
+}
 
 .main-btn {
     border-radius: 4px;
@@ -111,11 +190,18 @@ align-items: center;
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
-    line-height: 52px; /* 325% */
+    line-height: 52px;
     letter-spacing: 0.5px;
     text-transform: uppercase;
     color: #FFF;
  }
+ @media (max-width: 576px) {
+    .main-btn{
+        line-height: 30px;
+        padding:0 20px;
+        font-size: 12px;
+    }
+}
  
  .main-btn:hover, .main-btn:focus, .main-btn:active{
     opacity: 0.9;
@@ -147,7 +233,14 @@ align-items: center;
     width: 100%;
     background-image: url(../img/174248-vodopad-josemiti-priroda-leica_v_lux_tip_114-dostoprimechatelnost-1920x1080.jpg);
     background-repeat: no-repeat;
-    background-size:100%;
+    background-size:100% 100%;
+}
+@media (max-width: 576px) {
+    .slide-two{
+        background-size: 100% 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+    }
 }
 
 .prev-btn {
@@ -170,6 +263,11 @@ align-items: center;
     border-radius: 50%;
     width: 48px;
 }
+@media (max-width: 576px) {
+    .next-btn, .prev-btn{
+        display: none;
+    }
+}
 
 .next-btn:hover, .prev-btn:hover{
     opacity: 1;
@@ -186,12 +284,6 @@ align-items: center;
 
 .next-btn:focus, .prev-btn:focus{
     border: none;
-    background-color: white;
-    position: absolute;
-    z-index: 99;
-    height: 48px;
-    border-radius: 50%;
-    width: 48px;
     outline: none;
 }
 
@@ -199,6 +291,16 @@ align-items: center;
     padding-top: 220px;
     padding-bottom: 353px;
 }
+
+@media (max-width: 576px) {
+    .slide-content{
+        padding-top: 15px;
+        padding-bottom: 0;
+        padding-left: 15px;
+        height: auto;
+    }
+}
+
 .slide-content h1{
     padding-bottom: 18px;
     color: #FFF;
@@ -208,6 +310,12 @@ align-items: center;
     letter-spacing: 1px;
     font-size: 72px;
     line-height: 130%;
+}
+@media (max-width: 576px) {
+    .slide-content h1{
+        font-size: 30px;
+        padding-bottom: 7px;
+    }
 }
 
 .slide-content span{
@@ -220,6 +328,11 @@ align-items: center;
     letter-spacing: 1px;
     color:#FF5A30;
 }
+@media (max-width: 576px) {
+    .slide-content span{
+        font-size: 30px;
+    }
+}
 .slide-content p{
     font-family: Ubuntu;
     font-size: 20px;
@@ -227,6 +340,12 @@ align-items: center;
     font-weight: regular;
     line-height: 150%;
     color: #FFF;
+}
+
+@media (max-width: 576px) {
+    .slide-content p{
+        font-size: 10px;
+    }
 }
 
 .slide-content p + .main-btn{
@@ -238,11 +357,24 @@ align-items: center;
     display: flex;
     align-items: center;
 }
+@media (max-width: 576px) {
+    .sliders-container {
+        height: 250px;
+    }
+}
+
 .slide-three{
     width: 100%;
     background-image: url(../img/174246-nyu_jorkskij_zakat-vsemirnyj_torgovyj_centr_1-zakat-gorod-empajr_stejt_bilding-1920x1080.jpg);
     background-repeat: no-repeat;
-    background-size:100%;
+    background-size:100% 100%;
+}
+@media (max-width: 576px) {
+    .slide-three{
+        background-size: 100% 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+    }
 }
 .slider-count{
     position: absolute;
@@ -283,7 +415,14 @@ align-items: center;
     width: 100%;
     background-image: url(../img/174167-rozhdestvenskie_ogni-rozhdestvo-elka-osveshhenie-rozhdestvenskie_girlyandy-1920x1080.jpg);
     background-repeat: no-repeat;
-    background-size:100%;
+    background-size:100% 100%;
+}
+@media (max-width: 576px) {
+    .slide-four{
+        background-size: 100% 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+    }
 }
 
 main{
@@ -1376,4 +1515,28 @@ a.soc-footer{
 
 .footer-goTop button:hover{
     background: #d4401a;
+}
+
+.mobile-nav-btn{
+    margin-left: 25px;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+  
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+  
+.change .bar2 {opacity: 0;}
+  
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
 }
